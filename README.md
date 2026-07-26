@@ -1,3 +1,25 @@
+Neoforge MDK 1.21.1 with Kotlin
+========
+
+A template for developing NeoForge mods using Kotlin for Forge and Gradle Kotlin DSL.
+
+Migrating from Java, Groovy DSL to Kotlin is a huge pain. I decided to make this template so you can build mods right away instead of spending hours to set it up.
+
+## Features
+
+- Kotlin for Forge preconfigured
+- Gradle Kotlin DSL (`build.gradle.kts`, `settings.gradle.kts`)
+- Ready to use out of the box
+
+This template targets Minecraft 1.21.1 only.
+If you need another version, you can either migrate it yourself, follow this template, or use the Kotlin for Forge migration guide as a reference.
+
+> [!NOTE]
+> This template is generated from Official Neoforge MDK using NeoGradle, but later I changed it to ModDevGradle
+>
+> Also because it is not an official template, it potentially contains hidden bugs. Please report it if you find one. Contributions are always welcome.
+
+## Original NeoForge MDK README:
 
 Installation information
 =======
