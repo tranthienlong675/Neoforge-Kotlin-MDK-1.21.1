@@ -3,6 +3,8 @@ plugins {
     `maven-publish`
     id("net.neoforged.moddev") version "2.0.142"
     id("idea")
+
+    kotlin("jvm") version "2.4.10"
 }
 
 tasks.named<Wrapper>("wrapper") {
@@ -34,7 +36,11 @@ sourceSets.main {
 }
 
 repositories {
-
+    // Add KFF Maven repository
+    maven {
+        name = "Kotlin for Forge"
+        setUrl("https://thedarkcolour.github.io/KotlinForForge/")
+    }
 }
 
 base {
@@ -109,7 +115,12 @@ configurations.named("runtimeClasspath") {
 
 dependencies {
     implementation("net.neoforged:neoforge:${neo_version}")
+
+    val kff_version: String by project
+    implementation("thedarkcolour:kotlinforforge-neoforge:$kff_version")
 }
+
+val kff_version_range: String by project
 
 tasks.withType<ProcessResources>().configureEach {
     var replaceProperties = mapOf(
@@ -121,6 +132,7 @@ tasks.withType<ProcessResources>().configureEach {
         "mod_name"                to mod_name,
         "mod_license"             to mod_license,
         "mod_version"             to mod_version,
+        "kff_version_range"       to kff_version_range
     )
 
     inputs.properties(replaceProperties)
