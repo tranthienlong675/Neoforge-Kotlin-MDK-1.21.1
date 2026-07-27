@@ -1,4 +1,4 @@
-Neoforge MDK 1.21.1 with Kotlin
+Neoforge MDK 1.21.1 using Kotlin and Kotlin DSL
 ========
 
 A template for developing NeoForge mods using Kotlin for Forge and Gradle Kotlin DSL.
